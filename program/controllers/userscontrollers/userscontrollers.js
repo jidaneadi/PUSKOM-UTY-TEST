@@ -57,7 +57,7 @@ const Register = async (req, res) => {
     name: req.body.fullname,
     email: req.body.email,
     password: newPass,
-    remember_token: tokens,
+    remember_token: tokens.substring(0,99),
   };
   const createUsers = await Users.create(data);
 
